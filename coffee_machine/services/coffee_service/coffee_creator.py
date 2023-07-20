@@ -1,7 +1,6 @@
 from abc import ABC, abstractmethod
 from db.resources import resources
 import pdb
-from coins.coins import Coins
 from coffees.latte import Latte
 
 class CoffeeCreator(ABC):
@@ -11,9 +10,22 @@ class CoffeeCreator(ABC):
 
     def verify_sufficient_resources(self):
         errors = []
-        ingredients = self.coffee.get_ingredients()
-        for ingredient in ingredients.keys():
-            if(resources[ingredient] < ingredients[ingredient]):
+
+        coffee_ingredients = self.coffee.get_ingredients()
+        for ingredient in coffee_ingredients.keys():
+            if(resources[ingredient] < coffee_ingredients[ingredient]):
                 errors.append(f"Sorry there is not enough {ingredient}")
 
-        raise Exception(errors) if errors else None
+        if errors:
+            raise Exception(errors)
+
+    def coffee_price(self):
+        return self.coffee.get_price()
+
+    def make_coffee(self):
+        coffee_ingredients = self.coffee.get_ingredients()
+        for ingredient in coffee_ingredients.keys():
+            resources[ingredient] = resources[ingredient] - coffee_ingredients[ingredient]
+        
+        print(f"Here is your cofee. Enjoy!")
+        
