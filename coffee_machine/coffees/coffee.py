@@ -3,12 +3,22 @@ from abc import ABC, abstractmethod
 class Coffee(ABC):
     def __init__(self):
         self.ingredients = {}
-        self.price = None
+        self.set_client()
 
-    @abstractmethod
     def get_ingredients(self):
-        pass
+        if not self.ingredients:
+            self.ingredients['water'] = self.client['water']
+            self.ingredients['milk'] = self.client['milk']
+            self.ingredients['coffee'] = self.client['coffee']
+
+        return self.ingredients
+
+    def get_price(self):
+        return self.client['price']
+    
+    def get_name(self):
+        return self.client['name']
 
     @abstractmethod
-    def get_price(self, param):
+    def set_client(self):
         pass
