@@ -11,11 +11,8 @@ class GameScreen():
     self.screen.exitonclick()
 
   def listen(self, snake):
-    print("Listening")
     self.screen.listen()
-
     self.screen.onkey(lambda: snake.set_listeners(90), 'Up')
     self.screen.onkey(lambda: snake.set_listeners(180), 'Left')
     self.screen.onkey(lambda: snake.set_listeners(0), 'Right')
     self.screen.onkey(lambda: snake.set_listeners(270), 'Down')
-
