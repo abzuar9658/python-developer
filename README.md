@@ -25,7 +25,10 @@ Here's a list of projects available in this repository:
    - Technologies: Python.
    - Key Concepts: Object Oriented Programming, Object Oriented Design, Template Pattern, Factory Pattern.
 
-2. ... (add more projects as needed)
+2. Project 2: [Snake Game]
+   - Description: A turtle based snake game focused on design principles
+   - Technologies: Python, turtle, tkinter.
+   - Key Concepts: Object Oriented Programming, Object Oriented Design
 
 ## Getting Started
 
