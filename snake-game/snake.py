@@ -22,18 +22,14 @@ class Snake():
     while True:
       current_position = self.head.get_position()
       self.head.move_body()
-  
       temp = self.head.next
+
       while temp:
-        curr = temp.prev.get_position()
-        temp.set_position(current_position)
-
-        print('curr', curr)
-        print('current pos', current_position)
-
-        current_position = curr
-
-        temp = temp.prev
+        to_set = current_position
+        curr_temp_pos = temp.get_position()
+        temp.set_position(to_set)
+        current_position = curr_temp_pos
+        temp = temp.next
 
   def set_listeners(self, angle):
     self.head.body.setheading(angle)

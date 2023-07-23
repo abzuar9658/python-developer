@@ -7,7 +7,8 @@ snake = Snake()
 snake.add_body()
 snake.add_body()
 snake.add_body()
-
+snake.add_body()
+snake.add_body()
 
 game_screen.listen(snake)
 snake.move()

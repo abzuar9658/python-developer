@@ -1,5 +1,4 @@
 import turtle
-import random
 
 class SnakeBody():
   def __init__(self, next=None, prev=None, x_axis=0, y_axis=0, color='white', shape='square'):
@@ -11,7 +10,6 @@ class SnakeBody():
     self.body.setpos(x_axis, y_axis)
     self.body.color(color)
     self.body.shape(shape)
-    self.number = random.randint(0,100)
 
   def get_position(self):
     return self.body.position()
