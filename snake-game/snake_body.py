@@ -23,9 +23,8 @@ class SnakeBody():
   def set_position(self, pos):
     self.body.setpos(pos)
 
-  def size(self):
-    print('size', self.body.width())
+  def get_size(self):
     return self.body.pensize()
 
-  def move_body(self, speed=10):
+  def move_body(self, speed=20):
     self.body.forward(speed)
